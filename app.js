@@ -28,16 +28,14 @@ app.get('/',(req,res) => {
 })
 
 
-
+const port = process.env.port || 8080  //STEP 1 => echeck if in production use available in heroku else if developement use 8080
+//tell node to listen to port 3000
+app.listen(port,console.log(`Were listening to port ${port}`)); //development stage only
 
 
 //DB CONNECTION
 //mongodb+srv://testboy1:<password>@cluster0-ryi9b.mongodb.net/test
-mongodb.connect(process.env.DB_CONNECTION,(res)=>{
+//STEP 2 => check if production use available URI else use env.DB_CONNECTION
+mongodb.connect(process.env.MONGGODB_URI || process.env.DB_CONNECTION,(res)=>{
     console.log('We are now connected!'+res)
-}) 
-
-
-//tell node to listen to port 3000
-app.listen('3000'); //development stage only
-//const port = process.env.port || 8080 
+})  
