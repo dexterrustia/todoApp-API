@@ -28,7 +28,7 @@ app.get('/',(req,res) => {
 })
 
 
-const port = process.env.port || 8080  //STEP 1 => echeck if in production use available in heroku else if developement use 8080
+const port = process.env.port || 3000  //STEP 1 => echeck if in production use available in heroku else if developement use 8080
 //tell node to listen to port 3000
 app.listen(port,console.log(`Were listening to port ${port}`)); //development stage only
 
