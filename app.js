@@ -19,9 +19,11 @@ app.use(function(req, res, next) {
 //ROUTES 
 const postRouter = require('./routes/post')  
 const todoRouter = require('./routes/todo') 
+const userRouter = require('./routes/user')
 //user meddleware ::.use
 app.use('/post',postRouter);
 app.use('/todo',todoRouter);
+app.use('/user',userRouter)
 
 app.get('/',(req,res) => {
     res.send('Hellow word!')
